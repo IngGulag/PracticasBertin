@@ -98,13 +98,13 @@ public class Principal {
 				 datos.nextLine();
 				 
 				 System.out.println("Precio");
-				 precio = datos.nextInt();
+				 precio = datos.nextDouble();
 				 datos.nextLine();
 				 
 				 //instanciamos
 				 libro = new Libro(nombre, autor, editorial, noPaginas, precio);
 				 imp.guardar(libro);
-				 System.out.println("Seguardo exitosamente el libro: " + libro.getNombre() + "en ");
+				 System.out.println("Guardo exitosamente el libro: " + libro.getNombre());
 				 break;
 				
 				case 2:
@@ -132,7 +132,7 @@ public class Principal {
 						indice = datos.nextInt();
 						datos.nextLine();
 						
-						if(indice >= 0 && indice >imp.lista.size()) {
+						if(indice >= 0 && indice < imp.lista.size()) {
 							do {
 								System.out.println("** MENU EDITAR **");
 								System.out.println("1.- EDITAR NOMBRE");
@@ -141,7 +141,7 @@ public class Principal {
 								System.out.println("4.- EDITAR NUMERO DE PAGINAS");
 								System.out.println("5.- EDITAR PRECIO");
 								System.out.println("6.- REGRESAR AL MENU PRINCIPAL");
-								System.out.println("6.- ELIGE UNA OPCCION");
+								System.out.println("7.- ELIGE UNA OPCCION");
 								
 								menuS = datos.nextInt();
 								datos.nextLine();
@@ -197,7 +197,7 @@ public class Principal {
 						System.out.println("Indica el indice que desea eliminar");
 						indice = datos.nextInt();
 						datos.nextLine();
-						if(indice >= 0 && indice > imp.lista.size()){
+						if(indice >= 0 && indice < imp.lista.size()){
 							imp.eliminar(indice);
 							System.out.println("El libro se elimino");
 						}else {
